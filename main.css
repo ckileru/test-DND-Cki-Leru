@@ -24,7 +24,7 @@ body {
 	background-color: #010101;
 	font-family: raleway_f, sans-serif;
 	line-height: 1.55;
-	background-image: url('/img/bg-dark.png');
+	background-image: url('img/bg-dark.png');
 	
 }
 
@@ -34,7 +34,7 @@ body {
 	z-index: 40;
 	width: 100%;
 	height: calc(var(--index) * 10);
-	background-image: url(../img/ground.png);
+	background-image: url('img/ground.png');
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -46,15 +46,15 @@ body {
 }
 .layers__base {
 	transform: translate3d(0, calc(var(--scrollTop) / 1.6), 0);
-	background-image: url('/img/layer-base.png');
+	background-image: url('img/layer-base.png');
 }
 .layers__middle {
 	transform: translate3d(0, calc(var(--scrollTop) / 2.5), 0);
-	background-image: url('/img/layer-middle.png');
+	background-image: url('img/layer-middle.png');
 }
 .layers__front {
 	transform: translate3d(0, calc(var(--scrollTop) / 5.7), 0);
-	background-image: url('/img/layer-front.png');
+	background-image: url('img/layer-front.png');
 }
 .layer__header {
 	transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
@@ -75,7 +75,7 @@ body {
 	--main-article-transform: translate3d(0, calc(var(--scrollTop) / -7.5), 0);
 	color: var(--text);
 	top: -1px;
-	background-image: url('/img/dungeon.jpg');
+	background-image: url('img/dungeon.jpg');
 }
 .main-article__header {
 	font-size: calc(var(--index) * 1.8);
