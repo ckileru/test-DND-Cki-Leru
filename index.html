@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/logo.png" type="image/icon type">
+  <title>ArtTavern</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="main.css">
+  <script src="libs/gsap/gsap.min.js" defer></script>
+  <script src="libs/gsap/ScrollTrigger.min.js" defer></script>
+  <script src="libs/gsap/ScrollSmoother.min.js" defer></script>
+  <script src="main.js" defer></script>
+</head>
+
+<body class="max-w-[2000px] mx-auto 
+bg-[url('/img/bg-dark.jpg')]  bg-repeat">
+
+  <div class="wrapper">
+    <div class="content will-change-transform">
+
+      <nav class="mx-auto p-6 z-40 fixed top-0 w-full ">
+        <div class=" h-10 pb-3 mx-auto flex items-center justify-between border-b-2 border-teal-600">
+          <a href="#" class="py-1 px-6 text-neutral-400 mr-auto" aria-label="Go to homepage">ArtTavern </a>
+          <buttin id="menu" class="lg:hidden text-neutral-400 hover:text-red-400 transition-colors"
+            aria-label="Open Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="w-8 h-8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+          </buttin>
+          <div role="menubar" class="hidden flex-col gap-4 absolute right-0 left-0 top-16 shadow-xl text-center p-6 items-center 
+                                     lg:flex lg:flex-row lg:shadow-none lg:static lg:justify-between lg:bg-none">
+            <a role="menuitem" class="py-1 px-3 text-neutral-400" href="#">About product</a>
+            <a role="menuitem" class="py-1 px-3 text-neutral-400" href="#">Try it yourself</a>
+            <a role="menuitem" class="py-1 px-3 text-neutral-400" href="#">Roadmap</a>
+            <a role="menuitem" class="py-1 px-3 text-neutral-400" href="#">About us</a>
+
+            <a role="menuitem"
+              class="py-2 px-3 text-neutral-400 bg-amber-800 rounded-md shadow-xl hover:shadow-none transition-shadow"
+              href="#">Support us</a>
+          </div>
+        </div>
+      </nav>
+
+      <header class="main-header relative">
+        <div class="h-screen flex  items-center justify-center text-center overflow-hidden relative">
+
+          <div class="layer__header will-change-transform z-10 uppercase font-black mb-32">
+            <div class="layers__caption">description placeholder</div>
+            <div class="layers__title">title placeholder</div>
+          </div>
+
+          <div
+            class="layer layers__base bg-[url('/img/layer-base.png')] h-full w-full absolute bg-cover bg-center will-change-transform z-0">
+          </div>
+          <div
+            class="layer layers__middle bg-[url('/img/layer-middle.png')] h-full w-full absolute bg-cover bg-center will-change-transform z-20">
+          </div>
+          <div
+            class="layer layers__front bg-[url('/img/layer-front.png')] h-full w-full absolute bg-cover bg-center will-change-transform z-20">
+          </div>
+
+        </div>
+      </header>
+
+      <article
+        class="main-article bg-[url('/img/dungeon.jpg')] min-h-screen bg-cover bg-center flex justify-center items-center relative text-center z-30">
+        <div class="main-article__content">
+          <h2 class="main-article__header will-change-transform uppercase">To be continued</h2>
+          <p class="main-article__paragraph will-change-transform">Привет! Мы создаем классный конструктор-редактор,
+            который позволяет выразить себя через создание персонажей в 2D ламповом стиле. Он идеально подходит для игр
+            вроде D&D, других настольных ролевых игр, профессионального творчества и просто для собственного
+            развлечения.</p>
+        </div>
+
+        <img class="absolute -bottom-16 right-0 -z-10" src="img/bg-light.jpg" alt="">
+      </article>
+
+      <!--------Карточки---------->
+      <div
+        class="gallery__left flex text-center overflow-hidden flex-col items-center justify-center lg:flex-row lg:justify-between lg:items-start">
+        <div class="text-block gallery__item z-30">
+          <h2 class="text-block__h">Невероятная кастомизация</h2>
+          <p class="text-block__p">Сейчас ты можешь увидеть такие расы как: драконорожденный, дварф и тифлинг. В
+            разработке все 42 расы из D&D. Мы также планируем добавить разные типы поз для каждой расы: статичные,
+            боевые, джо-джо позы и
+            многое другое.Большим разнообразием одежды и оружия,
+            чтобы каждый мог визуально воплотить своего персонажа.</p>
+        </div>
+        <div class="text-block gallery__item z-30">
+          <h2 class="text-block__h">Текстовый редактор</h2>
+          <p class="text-block__p">После визуализации своего персонажа сразу же приступай к созданию его уникального
+            сюжета в удобном текстовом редакторе. Мы планируем добавить разные стилизованные листы для записи
+            характеристик и
+            истории персонажей. </p>
+        </div>
+        <div class="text-block gallery__item z-30">
+          <h2 class="text-block__h">Фигурки и дайсы </h2>
+          <p class="text-block__p">Когда одного образа недостаточно и душа требует осязаемого воплощения -
+            мы предлагаем возможность заказать кастомные дайсы и фигурки героев,
+            как в отдельности, так и вместе, чтобы вы могли использовать их во время игры!</p>
+        </div>
+      </div>
+      <!--------Поддержите нас---------->
+      <div class=" flex flex-col items-center justify-center  lg:flex-row  ">
+        <div class="text-block gallery__item z-30 flex-1 mx-4">
+          <h2 class="text-block__h">Support us</h2>
+          <p class="text-block__p">Если ты поддерживаешь наш проект, внося небольшую сумму каждый месяц (например, на
+            платформе Бусти), то у тебя будет возможность влиять на развитие редактора и предлагать свои идеи по
+            расширению
+            набора ассетов. В сентябре мы начнем Kickstarter-кампанию,
+            чтобы привлечь больше
+            талантливых художников и программистов. Пожалуйста, поддержи проект, если тебе нравится наша идея!</p>
+          <div class="text-center"><a
+              class=" py-2 px-3 text-neutral-400 bg-amber-800 rounded-md shadow-xl hover:shadow-none transition-shadow"
+              href="#">Support us</a></div>
+        </div>
+        <div class="text-block gallery__item z-30 flex-1 mx-4">
+          <img style="width: 100%;" src="img/hero-section.jpg" alt="">
+        </div>
+      </div>
+      <!--------Dress Up---------->
+      <div class="px-6 bg-amber-800 min-h-screen">
+        <h1 class="text-center main-article__header">Placeholder</h1>
+      </div>
+  
+    </div>
+  </div>
+</body>
