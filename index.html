@@ -10,15 +10,21 @@
   <script src="libs/gsap/gsap.min.js" defer></script>
   <script src="libs/gsap/ScrollTrigger.min.js" defer></script>
   <script src="libs/gsap/ScrollSmoother.min.js" defer></script>
+  <script src="lang.js" defer></script>
   <script src="main.js" defer></script>
 </head>
 
 <body>
+  <div class="logo"><a href="#"><img src="img/logo_home_red.svg" alt="home"></a></div>
   <div class="wrapper">
-    <div class="content">
-      
+    <div class="content"> 
       <nav class="main_nav">
         <div class="main_nav_container ">
+          <select class="change-lang">
+            <option value="ru">rus</option>
+            <option value="en" selected>eng</option>
+            <option value="sp">esp</option>
+        </select>
           <buttin id="menu" class="mobile" aria-label="Open Menu">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
               stroke="currentColor" class="icon-close hidden" style="width: 2rem; 
@@ -33,16 +39,19 @@
             </svg>
           </buttin>
           <div id="menubar" class="main_nav_links hidden blur">
-            <a href="#">Roadmap</a>
+            <a href="#">Try it yourself</a>
             <a href="#">About us</a>
+            <a href="#">Roadmap</a>
+            <a href="#">Our team</a>
             <a href="#">Support us</a>
           </div>
         </div>
       </nav>
       <header>
+        <a name="Home"></a>
         <header class="main-header">
           <div class="layers">
-            <div class="layer__header">art tavern</div>
+            <div class="layer layers__title"></div>
             <div class="layer layers__base"></div>
             <div class="layer layers__middle"></div>
             <div class="layer layers__front"></div>
@@ -50,7 +59,7 @@
         </header>
         <div class="header_description">
           <div class="star-icon header_star mobile"> <img src="img/star_icon.svg" alt=""></div>
-          <p>Приветствуем тебя, о Странник! </p>
+          <p class="lng-site-name">Приветствуем тебя, о Странник! </p>
           <div class="header_description_with_stars">
             <div class="star-icon pc"> <img src="img/star_icon.svg" alt=""></div>
             <p>С любовью и гордостью мы представляем тебе Art Tavern: редактор, который позволит самовыражаться через
@@ -73,20 +82,20 @@
           <div class="select_race_card">
             <img src="img/race_select_card_img_2.png" alt="">
             <div class="select_race_card_title">
-              <h4>Драконорожденный</h4>
+              <h4>Дварф</h4>
             </div>
           </div>
           <div class="select_race_card">
             <img src="img/race_select_card_img_3.png" alt="">
             <div class="select_race_card_title">
-              <h4>Драконорожденный</h4>
+              <h4>Тифлинг</h4>
             </div>
           </div>
           <div class="select_race_card">
             <p class="select_race_card_and_more">and more</p>
           </div>
         </div>
-        <div class="link-btn select_race_btn"><a href="#">kickstarter page</a></div>
+        <div class="link-btn select_race_btn"><a href="https://www.kickstarter.com/profile/arttavern" target="_blanc" >kickstarter page</a></div>
       </section>
       <div class="container_bg_img_pc">
         <section class="plans_n_goals">
@@ -148,9 +157,8 @@
           <div class="roadmap_container">
             <div class="line pc"></div>
             <div class="roadmap_card">
-              <div class="star-icon pc">
-                <p>2023:</p>
-                <img src="img/star_icon.svg" alt="">
+              <div class="star-icon">
+                <img src="img/star_2023_icon.svg" alt="">
               </div>
               <div class="textbox">
                 <h3>Предпродакшен</h3>
@@ -160,14 +168,13 @@
               </div>
             </div>
             <div class="roadmap_card">
-              <div class="star-icon pc"> <img src="img/star_icon.svg" alt=""></div>
+              <div class="star-icon"> <img src="img/star_2024_icon.svg" alt=""></div>
               <div class="textbox">
                 <h3>Старт Кикстартера</h3>
               </div>
             </div>
             <div class="roadmap_card">
-              <div class="star-icon pc">
-                <p>2024:</p>
+              <div class="star-icon">
                 <img src="img/star_icon.svg" alt="">
               </div>
               <div class="textbox">
@@ -178,7 +185,7 @@
               </div>
             </div>
             <div class="roadmap_card">
-              <div class="star-icon pc"> <img src="img/star_icon.svg" alt=""></div>
+              <div class="star-icon"> <img src="img/star_2025_icon.svg" alt=""></div>
               <div class="textbox">
                 <h3>Полный доступ</h3>
                 <p>Создание текстового редактора и дополнительных 15 рас для конструктора:
@@ -189,7 +196,7 @@
               </div>
             </div>
             <div class="roadmap_card">
-              <div class="star-icon pc"> <img src="img/star_icon.svg" alt=""></div>
+              <div class="star-icon"> <img src="img/star_icon.svg" alt=""></div>
               <div class="textbox">
                 <h3>Масшабирование</h3>
                 <p>Разработка мобильного приложения и экосистемы для хранения и чтения историй.</p>
@@ -201,8 +208,8 @@
             </p>
             <div class="roadmap_supportUs_btn_img"><img src="img/roadmap_img.png" alt=""></div>
             <div class="link-btn roadmap_supportUs_btn">
-              <a href="#">boosty</a>
-              <a href="#">patreon</a>
+              <a href="https://boosty.to/glint" target="_blanc">boosty</a>
+              <a href="https://www.patreon.com/glint" target="_blanc" >patreon</a>
             </div>
           </div>
         </section>
@@ -211,22 +218,22 @@
           <div class="our_team_container">
             <div class="our_team_container_for_mobile">
               <div class="our_team_card">
-                <div class="our_team_card_img"><img src="img/Mark.png" alt=""></div>
-                <p>Lorem ipsum</br> dolor sit amet consectetur.</p>
+                <div class="our_team_card_img"><img src="img/our-team-1.png" alt=""></div>
+                <p>Marina Evlanova (Cki Leru)</br> founder and creative director</p>
               </div>
               <div class="our_team_card">
-                <div class="our_team_card_img"><img src="img/Mark.png" alt=""></div>
-                <p>Lorem ipsum</br> dolor sit amet consectetur.</p>
+                <div class="our_team_card_img"><img src="img/our-team-2.png" alt=""></div>
+                <p>Heathery</br>web developer</p>
               </div>
             </div>
             <div class="our_team_container_for_mobile">
               <div class="our_team_card">
-                <div class="our_team_card_img"><img src="img/Mark.png" alt=""></div>
-                <p>Lorem ipsum</br> dolor sit amet consectetur.</p>
+                <div class="our_team_card_img"><img src="img/our-team-3.png" alt=""></div>
+                <p>Future Tavern Member</br>D&D master and consultant</p>
               </div>
               <div class="our_team_card">
-                <div class="our_team_card_img"><img src="img/Mark.png" alt=""></div>
-                <p>Lorem ipsum</br> dolor sit amet consectetur.</p>
+                <div class="our_team_card_img"><img src="img/our-team-4.png" alt=""></div>
+                <p>Future Tavern Member</br>marketing strategist</p>
               </div>
             </div>
           </div>
@@ -234,11 +241,11 @@
       </div>
       <footer>
         <div class="social_media_links">
-          <a class="footer_link" href="#"><img src="img/twitter_icon.svg" alt=""></a>
-          <a class="footer_link" href="#"><img src="img/twitter_icon.svg" alt=""></a>
-          <a class="footer_link" href="#"><img src="img/twitter_icon.svg" alt=""></a>
-          <a class="footer_link" href="#"><img src="img/twitter_icon.svg" alt=""></a>
-          <a class="footer_link" href="#"><img src="img/twitter_icon.svg" alt=""></a>
+          <a class="footer_link" href="https://www.kickstarter.com/profile/arttavern" target="_blanc" ><img src="img/kickstarter_icon.svg" alt=""></a>
+          <a class="footer_link" href="https://www.instagram.com/evlanovart/" target="_blanc" ><img src="img/instagram_icon.svg" alt=""></a>
+          <a class="footer_link" href="https://twitter.com/arttavern9" target="_blanc" ><img src="img/twitter_icon.svg" alt=""></a>
+          <a class="footer_link" href="https://www.patreon.com/glint" target="_blanc" ><img src="img/patreon_icon.svg" alt=""></a>
+          <a class="footer_link" href="https://boosty.to/glint" target="_blanc" ><img src="img/boosty_icon.svg" alt=""></a>
         </div>
         <h2>art tavern 2023</h2>
       </footer>

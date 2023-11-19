@@ -3,17 +3,14 @@
     --transition: transform .75s cubic-bezier(.075, .5, 0, 1);
     --text-color: #F8F7F4;
     --text-color-yellow: #FEBB58;
-    --text-color-btn-race-select: #2E2E2E;
+    --text-color-btn-race-select: #D9D9D9;
+    --bg-color-select: rgba(254, 187, 88, 0.5);
     --btn-bg-color: rgba(206, 55, 41, 0.5);
     --btn-bg-color-hover: rgba(206, 55, 41, 1);
-    --btn-race-select-bg-color: rgba(246, 244, 240, 0.7);
-    --btn-race-select-bg-color-hover: rgba(46, 46, 46, 0.7);
+    --btn-race-select-bg-color: rgba(0, 0, 0, 0.5);
+    --btn-race-select-bg-color-hover: rgba(206, 55, 41, 0.5);
 }
 
-@font-face {
-    font-family: neucha-c;
-    src: url(fonts/Neucha.ttf);
-}
 
 @font-face {
     font-family: helvetica_bold-c;
@@ -35,6 +32,10 @@
     src: url(fonts/helvetica_regular.otf);
 }
 
+html{
+    scroll-behavior:smooth
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -48,7 +49,12 @@ body {
 *::before {
     box-sizing: border-box;
 }
-
+::selection, option {
+	background: var(--bg-color-select); /* Safari, Chrome, Opera */
+}
+::-moz-selection {
+	background: var(--bg-color-select); /* FireFox */
+}
 a,
 button,
 ul {
@@ -97,7 +103,7 @@ h2 {
 
 .textbox p {
     line-height: calc(var(--index) * 0.8);
-    font-size: calc(var(--index) * 0.9);
+    font-size: calc(var(--index) * 0.7);
     font-family: helvetica_regular-c, sans-serif;
 }
 
@@ -120,6 +126,16 @@ h2 {
 }
 
 /**---------------Header-------------------------*/
+
+.logo{
+    position: fixed;
+    top: 20px;
+    left: 45px;
+    width: 40px;
+    z-index: 1000;
+    cursor: pointer;
+}
+
 .main_nav {
     color: var(--text-color);
     position: fixed;
@@ -127,8 +143,7 @@ h2 {
     z-index: 1000;
     padding: 1rem;
     width: 100%;
-    background-image: url('img/bg_main_nav.jpg');
-    background-repeat: repeat;
+    
 }
 
 .main_nav_container {
@@ -165,7 +180,22 @@ h2 {
 .main_nav_links a:last-of-type:hover {
     background-color: var(--btn-bg-color);
 }
-
+.change-lang{
+    border: none;
+    background-color: transparent;
+    color: var(--text-color);
+    outline: none;
+    padding: 5px;
+    cursor: pointer;
+    text-transform: capitalize;
+    font-family: helvetica_oblique-c;
+    line-height: calc(var(--index) * 0.8);
+    font-size: calc(var(--index) * 0.9);
+}  
+.change-lang option{
+    background-color: #302727;
+    padding: 5px;
+}
 .main-header {
     position: relative;
 }
@@ -204,6 +234,11 @@ h2 {
     transition: var(--transition);
 }
 
+.layers__title {
+    margin-top: 200px;
+    transform: translate3d(0, calc(var(--scrollTop) / 1.2), 0);
+    background-image: url(img/layer-title.png);
+}
 .layers__base {
     transform: translate3d(0, calc(var(--scrollTop) / 1.6), 0);
     z-index: 0;
@@ -218,20 +253,6 @@ h2 {
 .layers__front {
     transform: translate3d(0, calc(var(--scrollTop) / 5.7), 0);
     background-image: url(img/layer-front.png);
-}
-
-.layer__header {
-    margin-top: -30%;
-    z-index: 1;
-    transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
-    transition: var(--transition);
-    will-change: transform;
-    text-transform: uppercase;
-    color: var(--text);
-    text-shadow: 0 0 15px #9d822b;
-    font-size: calc(var(--index) * 4.3);
-    letter-spacing: calc(var(--index) / 2.25);
-    font-family: neucha-c;
 }
 
 
@@ -281,6 +302,7 @@ h2 {
     max-height: 436px;
     max-width: 371px;
     overflow: hidden;
+    border: var(--text-color-yellow) 1px solid;
     border-radius: 7px;
     position: relative;
     cursor: pointer;
@@ -561,7 +583,6 @@ footer h2 {
     display: flex;
     gap:10px;
     justify-content: center;
-    background-color: #FEBB58;
 }
 .footer_link {
     display: block;
@@ -624,9 +645,18 @@ footer h2 {
     .hidden{
         display: none;
     }
+    .logo{
+        top: 10px;
+        left: 20px;
+        width: 30px;
+        z-index: 10000;
+    }
+    
     .main_nav{
         margin:0 0;
         height: 60px;
+        background-image: url('img/bg_main_nav.png');
+    background-repeat: repeat;
     }
     .main_nav_links {
         position: absolute;
@@ -638,14 +668,12 @@ footer h2 {
         flex-direction: column;
         gap:30px;
         box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-        background-image: url('img/bg_main_nav.jpg');
-        background-repeat: repeat;
-        
+        background-image: url('img/bg_main_nav.png');
+        background-repeat: repeat;    
     }
    
     .main_nav_links a{
         font-size: 18px;
-    
     }
   
     .main_nav_links a:last-of-type {
@@ -656,6 +684,19 @@ footer h2 {
         display: none;
     }
 
+    .change-lang{
+        font-size: 18px;
+    }
+    .change-lang option{
+        font-size: 15px;
+    }
+    .layers__title{
+        margin-bottom: 600px;
+        background-image: url('img/layer-title-mobile.png'); 
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+  
     .layer__header {
         margin-top: -90%;
     }
@@ -703,8 +744,22 @@ footer h2 {
         width: 90vw;
         height: 147px;
         max-width: 90vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     }
-
+    .select_race_card img {
+        display: none;
+    }
+    .select_race_card:nth-of-type(1){
+        background-image: url('img/race_select_card_img_1.png');
+    }
+    .select_race_card:nth-of-type(2){
+        background-image: url('img/race_select_card_img_2.png');
+    }
+    .select_race_card:nth-of-type(3){
+        background-image: url('img/race_select_card_img_3.png');
+    }
     .select_race_card_title {
         bottom: -4%;
     }
@@ -812,7 +867,14 @@ footer h2 {
         max-width: 278px;
     }
 
-    /*===========IMPORTANT; FIX LATER===============*/
+    .roadmap_card .star-icon {
+        margin-top: 0;
+        margin-bottom: auto;
+        margin-left: 0;
+        margin-right: 0;
+        width: 17vw;
+    }
+    
     .roadmap_container {
         margin-top: 0px;
         flex-direction: column;
@@ -820,19 +882,25 @@ footer h2 {
         gap: 0;
         width: 84vw;
         max-width: 1624px;
+        
     }
 
     .roadmap_card {
         display: flex;
         align-items: center;
+        
     }
 
     .roadmap_card .textbox {
-        width: 150px;
+        width: 70vw;
+        text-align: left;
+        padding-left: 15px;
+    }
+    .roadmap_card .textbox p{
+        width: 100%;
     }
 
-
-    /*============END OF IMPORTANT; FIX LATER==============*/
+ 
 
     .roadmap_supportUs_container {
         border: 1px solid var(--text-color-yellow);
