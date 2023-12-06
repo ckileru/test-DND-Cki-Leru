@@ -102,7 +102,7 @@ h2 {
 }
 
 .textbox p {
-    line-height: calc(var(--index) * 0.8);
+    line-height: calc(var(--index) * 0.9);
     font-size: calc(var(--index) * 0.7);
     font-family: helvetica_regular-c, sans-serif;
 }
@@ -246,7 +246,7 @@ h2 {
 }
 
 .layers__middle {
-    transform: translate3d(0, calc(var(--scrollTop) / 2.5), 0);
+    transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
     background-image: url(img/layer-middle.png);
 }
 
@@ -259,8 +259,6 @@ h2 {
 .header_description {
     margin-top: 100px;
     text-align: center;
-    line-height: calc(var(--index) * 0.9);
-    font-size: calc(var(--index) * 1);
     font-family: helvetica_boldoblique-c;
 }
 
@@ -341,6 +339,12 @@ h2 {
     border-radius: 5px;
 }
 
+.and_more h4 {
+    text-transform: uppercase;
+    background-color: none;
+    color: rgba(251, 247, 247, 0.7);
+    
+}
 .select_race_card:hover h4 {
     color: var(--text-color);
     background-color: var(--btn-race-select-bg-color-hover);
@@ -362,12 +366,6 @@ h2 {
     background-size: cover;
 }
 
-.select_race_card_and_more {
-    text-align: center;
-    font-family: helvetica_boldoblique-c;
-    color: rgba(251, 247, 247, 0.7);
-    font-size: 60px;
-}
 
 /**---------------END Select Race-------------------------*/
 /**---------------Plans and Goals-------------------*/
@@ -568,6 +566,7 @@ h2 {
     line-height: calc(var(--index) * 0.9);
     font-size: calc(var(--index) * 0.7);
     font-style: italic;
+    font-family: helvetica_oblique-c, sans-serif;
 }
 
 /**---------------END  Our team-------------------*/
