@@ -32,8 +32,8 @@
     src: url(fonts/helvetica_regular.otf);
 }
 
-html{
-    scroll-behavior:smooth
+html {
+    scroll-behavior: smooth
 }
 
 body {
@@ -49,12 +49,18 @@ body {
 *::before {
     box-sizing: border-box;
 }
-::selection, option {
-	background: var(--bg-color-select); /* Safari, Chrome, Opera */
+
+::selection,
+option {
+    background: var(--bg-color-select);
+    /* Safari, Chrome, Opera */
 }
+
 ::-moz-selection {
-	background: var(--bg-color-select); /* FireFox */
+    background: var(--bg-color-select);
+    /* FireFox */
 }
+
 a,
 button,
 ul {
@@ -103,7 +109,7 @@ h2 {
 
 .textbox p {
     line-height: calc(var(--index) * 0.9);
-    font-size: calc(var(--index) * 0.7);
+    font-size: calc(var(--index) * 0.8);
     font-family: helvetica_regular-c, sans-serif;
 }
 
@@ -127,23 +133,23 @@ h2 {
 
 /**---------------Header-------------------------*/
 
-.logo{
+.logo {
     position: fixed;
     top: 20px;
     left: 45px;
     width: 40px;
-    z-index: 1000;
+    z-index: 5;
     cursor: pointer;
 }
 
 .main_nav {
     color: var(--text-color);
-    position: fixed;
+    position: absolute;
     top: 0;
-    z-index: 1000;
+    z-index: 4;
     padding: 1rem;
     width: 100%;
-    
+
 }
 
 .main_nav_container {
@@ -180,7 +186,8 @@ h2 {
 .main_nav_links a:last-of-type:hover {
     background-color: var(--btn-bg-color);
 }
-.change-lang{
+
+.change-lang {
     border: none;
     background-color: transparent;
     color: var(--text-color);
@@ -191,11 +198,13 @@ h2 {
     font-family: helvetica_oblique-c;
     line-height: calc(var(--index) * 0.8);
     font-size: calc(var(--index) * 0.9);
-}  
-.change-lang option{
+}
+
+.change-lang option {
     background-color: #302727;
     padding: 5px;
 }
+
 .main-header {
     position: relative;
 }
@@ -203,7 +212,7 @@ h2 {
 .main-header::after {
     content: '';
     position: absolute;
-    z-index: 100;
+    z-index: 3;
     width: 100%;
     height: calc(var(--index) * 10);
     background-image: url(../img/ground.png);
@@ -239,6 +248,7 @@ h2 {
     transform: translate3d(0, calc(var(--scrollTop) / 1.2), 0);
     background-image: url(img/layer-title.png);
 }
+
 .layers__base {
     transform: translate3d(0, calc(var(--scrollTop) / 1.6), 0);
     z-index: 0;
@@ -264,6 +274,8 @@ h2 {
 
 .header_description p {
     margin-bottom: 0;
+    line-height: calc(var(--index) * 0.9);
+    font-size: calc(var(--index) * 0.8);
 }
 
 .header_description_with_stars {
@@ -343,8 +355,9 @@ h2 {
     text-transform: uppercase;
     background-color: none;
     color: rgba(251, 247, 247, 0.7);
-    
+
 }
+
 .select_race_card:hover h4 {
     color: var(--text-color);
     background-color: var(--btn-race-select-bg-color-hover);
@@ -411,7 +424,19 @@ h2 {
 .plans_n_goals_col_4_img,
 .plans_n_goals_col_4_img img {
     width: 100%;
+    cursor: pointer;
+    transition: 0.3s;
 }
+
+.plans_n_goals_col_1_img img:hover,
+.plans_n_goals_col_2_img:hover,
+.plans_n_goals_col_2_img img:hover,
+.plans_n_goals_col_3_img img:hover,
+.plans_n_goals_col_4_img:hover,
+.plans_n_goals_col_4_img img:hover {
+    opacity: 0.7;
+}
+
 
 .plans_n_goals_col_3_n_4 {
     display: flex;
@@ -433,7 +458,76 @@ h2 {
     width: 19vw;
     max-width: 367px;
 }
-
+/**---------------Plans and Goals MODAL POPUP-------------------*/
+    .modal_1,
+    .modal_2,
+    .modal_3,
+    .modal_4{
+        display: none;
+    }
+  .plans_n_goals_modal {
+    position: fixed; 
+    z-index: 5; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.9); 
+  }
+  
+  .plans_n_goals_modal img{
+    margin: auto;
+    display: block;
+    height: 85%;
+  }
+  
+  .plans_n_goals_modal h3{
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: var(--text-color);
+    padding: 10px 0;
+    height: 150px;
+    font-size: calc(var(--index) * 1);
+  }
+  
+  .plans_n_goals_modal img, 
+  .plans_n_goals_modal h3 {  
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+  }
+  
+  @-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+  }
+  
+  @keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+  }
+  
+  .close{
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    transition: 0.3s;
+    width: 2rem; 
+    height: 2rem; 
+  }
+  
+  .close:hover,
+  .close:focus{
+    color: var(--text-color-btn-race-select);
+    cursor: pointer;
+  }
+/**---------------END Plans and Goals MODAL POPUP-------------------*/
 /**---------------END Plans and Goals-------------------*/
 
 /**---------------Kickstarter Roadmap-------------------*/
@@ -499,8 +593,8 @@ h2 {
 }
 
 .roadmap_supportUs_container p {
-    line-height: calc(var(--index) * 0.8);
-    font-size: calc(var(--index) * 0.75);
+    line-height: calc(var(--index) * 0.9);
+    font-size: calc(var(--index) * 0.8);
     color: var(--text-color-yellow);
     font-style: italic;
     font-family: helvetica_oblique-c, sans-serif;
@@ -546,19 +640,12 @@ h2 {
     width: 100%;
 }
 
-.our_team_container_for_mobile {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-
-.our_team_card_img {
+.our_team_card img {
     width: 10.5vw;
     max-width: 202px;
-}
-
-.our_team_card_img img {
-    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .our_team_card p {
@@ -578,17 +665,20 @@ footer h2 {
     color: var(--text-color);
     text-align: center;
 }
-.social_media_links{
+
+.social_media_links {
     display: flex;
-    gap:10px;
+    gap: 10px;
     justify-content: center;
 }
+
 .footer_link {
     display: block;
     width: 2vw;
     max-width: 66px;
     cursor: pointer;
 }
+
 .footer_link img {
     width: 100%;
 }
@@ -641,22 +731,24 @@ footer h2 {
     }
 
     /**---------------Header-------------------------*/
-    .hidden{
+    .hidden {
         display: none;
     }
-    .logo{
+
+    .logo {
         top: 10px;
         left: 20px;
         width: 30px;
-        z-index: 10000;
+        z-index: 5;
     }
-    
-    .main_nav{
-        margin:0 0;
+
+    .main_nav {
+        margin: 0 0;
         height: 60px;
         background-image: url('img/bg_main_nav.png');
-    background-repeat: repeat;
+        background-repeat: repeat;
     }
+
     .main_nav_links {
         position: absolute;
         right: 0;
@@ -665,16 +757,16 @@ footer h2 {
         margin: 0;
         padding-bottom: 4rem;
         flex-direction: column;
-        gap:30px;
+        gap: 30px;
         box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
         background-image: url('img/bg_main_nav.png');
-        background-repeat: repeat;    
+        background-repeat: repeat;
     }
-   
-    .main_nav_links a{
+
+    .main_nav_links a {
         font-size: 18px;
     }
-  
+
     .main_nav_links a:last-of-type {
         padding: 10px 5px;
     }
@@ -683,25 +775,27 @@ footer h2 {
         display: none;
     }
 
-    .change-lang{
+    .change-lang {
         font-size: 18px;
     }
-    .change-lang option{
+
+    .change-lang option {
         font-size: 15px;
     }
-    .layers__title{
+
+    .layers__title {
         margin-bottom: 600px;
-        background-image: url('img/layer-title-mobile.png'); 
+        background-image: url('img/layer-title-mobile.png');
         background-repeat: no-repeat;
         background-size: contain;
     }
-  
+
     .layer__header {
         margin-top: -90%;
     }
 
     .header_description {
-        z-index: 100;
+        z-index: 3;
         margin-top: -90px;
         line-height: 16px;
         font-size: 14px;
@@ -712,6 +806,10 @@ footer h2 {
         width: 90vw;
         padding: 20px 10px;
         position: relative;
+    }
+    .header_description p{
+        font-size: 14px;
+        line-height: 16px;
     }
 
     .header_description_with_stars {
@@ -743,22 +841,27 @@ footer h2 {
         width: 90vw;
         height: 147px;
         max-width: 90vw;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
     }
+
     .select_race_card img {
         display: none;
     }
-    .select_race_card:nth-of-type(1){
+
+    .select_race_card:nth-of-type(1) {
         background-image: url('img/race_select_card_img_1.png');
     }
-    .select_race_card:nth-of-type(2){
+
+    .select_race_card:nth-of-type(2) {
         background-image: url('img/race_select_card_img_2.png');
     }
-    .select_race_card:nth-of-type(3){
+
+    .select_race_card:nth-of-type(3) {
         background-image: url('img/race_select_card_img_3.png');
     }
+
     .select_race_card_title {
         bottom: -4%;
     }
@@ -873,7 +976,7 @@ footer h2 {
         margin-right: 0;
         width: 17vw;
     }
-    
+
     .roadmap_container {
         margin-top: 0px;
         flex-direction: column;
@@ -881,13 +984,13 @@ footer h2 {
         gap: 0;
         width: 84vw;
         max-width: 1624px;
-        
+
     }
 
     .roadmap_card {
         display: flex;
         align-items: center;
-        
+
     }
 
     .roadmap_card .textbox {
@@ -895,11 +998,12 @@ footer h2 {
         text-align: left;
         padding-left: 15px;
     }
-    .roadmap_card .textbox p{
+
+    .roadmap_card .textbox p {
         width: 100%;
     }
 
- 
+
 
     .roadmap_supportUs_container {
         border: 1px solid var(--text-color-yellow);
@@ -943,19 +1047,12 @@ footer h2 {
     /**---------------Our team-------------------*/
     .our_team_container {
         margin-top: 0 auto 37px auto;
-        flex-direction: column;
+        flex-wrap: wrap;
         gap: 10px;
     }
 
-    .our_team_container_for_mobile {
-        gap: 10px;
-        margin: 0 auto;
-    }
-
-    .our_team_card_img {
-        width: 80px;
-        margin: 0 auto;
-
+    .our_team_card img {
+        width: 30vw;   
     }
 
     .our_team_card p {
@@ -969,12 +1066,15 @@ footer h2 {
     footer h2 {
         font-size: 13px;
     }
-    .social_media_links{  
-        gap:5px;
+
+    .social_media_links {
+        gap: 5px;
     }
+
     .footer_link {
         width: 20px;
     }
+
     /**---------------END Footer-------------------*/
 
 }

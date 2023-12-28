@@ -1,8 +1,9 @@
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
-/** Scroll header */
+/**gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
+/** Scroll header 
+ 
 if (ScrollTrigger.isTouch !== 1) {
 	window.addEventListener('scroll', e => {
-		document.documentElement.style.setProperty('--scrollTop', `${this.scrollY}px`) // Update method
+		document.documentElement.style.setProperty('--scrollTop', `${this.scrollY}px`) 
 	})
 	gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
 	ScrollSmoother.create({
@@ -10,7 +11,7 @@ if (ScrollTrigger.isTouch !== 1) {
 		content: '.content'
 	})
 }
-
+*/
 /** Nav Bar */
 const navBtn = document.querySelector('#menu');
 const menuBar = document.querySelector('#menubar');
@@ -67,3 +68,15 @@ function changeLanguage(){
 }
 changeLanguage()
 
+/** Pop Up Modal image */
+
+let modalPopUp = function(popUpNumber){
+  const width = window.innerWidth;
+  const modal = document.querySelector('.modal_'+popUpNumber);
+  if (width >= 768) {modal.style.display = "block";}
+};
+
+let closeModalPopUp = function(popUpNumber){
+  const modal = document.querySelector('.modal_'+popUpNumber);
+  modal.style.display = "none";
+};
