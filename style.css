@@ -362,6 +362,12 @@ h2 {
     color: var(--text-color);
     background-color: var(--btn-race-select-bg-color-hover);
 }
+.select_race_card:last-of-type:hover h4,
+.select_race_card:last-of-type:hover{
+    background-color: unset !important;
+    color: rgba(251, 247, 247, 0.7);
+    cursor: default;
+}
 
 .select_race_btn {
     text-align: center;
